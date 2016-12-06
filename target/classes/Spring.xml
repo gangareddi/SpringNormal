@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:webflow="http://www.springframework.org/schema/webflow-config"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/webflow-config
+                           http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd">
+
+	<bean id="reference" class="senario.Reference">
+		<property name="developers">
+			<list>
+				<ref bean="developer"></ref>
+				<ref bean="developer1"></ref>
+				<ref bean="developer2"></ref>
+			</list>
+		</property>
+
+		<property name="projectManagers">
+			<list>
+				<ref bean="projectManager"></ref>
+				<ref bean="projectManager1"></ref>
+			</list>
+		</property>
+	</bean>
+	<bean id="developer" class="senario.Develper">
+		<property name="developerName" value="Gangareddy"></property>
+		<property name="projectName" value="DIP"></property>
+	</bean>
+	<bean id="developer1" class="senario.Develper">
+		<property name="developerName" value="Sahana"></property>
+		<property name="projectName" value="ES"></property>
+	</bean>
+	<bean id="developer2" class="senario.Develper">
+		<property name="developerName" value="Aneeksha"></property>
+		<property name="projectName" value="VLSI"></property>
+	</bean>
+	<bean id="projectManager" class="senario.ProjectManager">
+	<property name="projectManagerName" value="Teegala"></property>
+	<property name="workingCity" value="Hyderabad"></property>
+	</bean>
+	<bean id="projectManager1" class="senario.ProjectManager">
+	<property name="projectManagerName" value="Gaddam"></property>
+	<property name="workingCity" value="Banglore"></property>
+	</bean>
+</beans>
